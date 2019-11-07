@@ -35,14 +35,14 @@ public class BallMovement : MonoBehaviour
         transform.position += velocity;
 
         // check if ball reaches the "score" areas
-        if (transform.position.x <= -16.0f)
+        if (transform.position.x <= -8.0f)
         {
             velocity.x = velocity.y = 0.0f;
             transform.position = velocity;
             gameStart = false;
             //incrementScore(0);
         }
-        else if (transform.position.x >= 16.0f)
+        else if (transform.position.x >= 8.0f)
         {
             velocity.x = velocity.y = 0.0f;
             transform.position = velocity;
@@ -69,28 +69,15 @@ public class BallMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //paddle -> hit a vertical object
-        if(collision.gameObject.tag == "Paddle")
+        //paddle
+        if (collision.gameObject.tag == "Paddle")
         {
-            //going left
-            if(direction > Mathf.PI / 2)
-            {
-
-            }
-            //going right
-            else if (direction < Mathf.PI / 2)
-            {
-
-            }
-            else
-            {
-
-            }
+            velocity.x = -velocity.x;
         }
         //top & bottom walls
-        else if(collision.gameObject.tag == "Wall")
+        else if (collision.gameObject.tag == "Wall")
         {
-
+            velocity.y = -velocity.y;
         }
     }
 }
