@@ -5,6 +5,7 @@ using UnityEngine;
 public class BallMovement : MonoBehaviour
 {
     private float speed = 0.1f;
+    private float offset = Mathf.PI / 12; //offset of 15 degrees
     private Vector3 velocity = new Vector3(0.0f, 0.0f, 0.0f);
     private float direction = 0.0f; //angle in radians
     private bool gameStart = false;
@@ -34,21 +35,7 @@ public class BallMovement : MonoBehaviour
     {
         transform.position += velocity;
 
-        // check if ball reaches the "score" areas
-        if (transform.position.x <= -8.0f)
-        {
-            velocity.x = velocity.y = 0.0f;
-            transform.position = velocity;
-            gameStart = false;
-            //incrementScore(0);
-        }
-        else if (transform.position.x >= 8.0f)
-        {
-            velocity.x = velocity.y = 0.0f;
-            transform.position = velocity;
-            gameStart = false;
-            //incrementScore(1);
-        }
+        
     }
 
     private void CalculateStartVelocity()
@@ -57,7 +44,8 @@ public class BallMovement : MonoBehaviour
         direction = Random.Range(0.0f, 2.0f * Mathf.PI);
 
         // can't be straight up or down (no movement towards either side)
-        while (direction == 0.5f * Mathf.PI || direction == 1.5f * Mathf.PI)
+        //"wiggle room" of 15 degrees -> pi/12
+        while ((direction <= 0.5f * Mathf.PI + offset && direction >= 0.5f * Mathf.PI - offset) || (direction <= 1.5f * Mathf.PI + offset && direction >= 1.5f * Mathf.PI - offset))
         {
             direction = Random.Range(0.0f, 2.0f * Mathf.PI);
         }
@@ -78,6 +66,25 @@ public class BallMovement : MonoBehaviour
         else if (collision.gameObject.tag == "Wall")
         {
             velocity.y = -velocity.y;
+        }
+        //score
+        else
+        {
+            velocity.x = velocity.y = 0.0f;
+            transform.position = velocity;
+            gameStart = false;
+
+            //which player
+            if (transform.position.x < 0.0f)
+            {
+                //left
+                collision.gameObject.GetComponentInChildren<Score>().IncrementScore(0);
+            }
+            else if (transform.position.x > 0.0f)
+            {
+                //right
+                collision.gameObject.GetComponentInChildren<Score>().IncrementScore(0);
+            }
         }
     }
 }
