@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     //index 0 = right screen, index 1 = left screen
-    private int[] playerScores = { 0, 0 };
+    private int[] playerScores = new int[2];
     public Text ScoreDisplay1, ScoreDisplay2;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerScores[0] = 0;
+        playerScores[1] = 0;
     }
 
     // Update is called once per frame

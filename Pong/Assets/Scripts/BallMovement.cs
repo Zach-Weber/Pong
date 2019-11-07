@@ -68,23 +68,24 @@ public class BallMovement : MonoBehaviour
             velocity.y = -velocity.y;
         }
         //score
-        else
+        else if (collision.gameObject.tag == "MainCamera")
         {
-            velocity.x = velocity.y = 0.0f;
-            transform.position = velocity;
-            gameStart = false;
-
+            Score PlayerScores = collision.gameObject.GetComponent<Score>();
             //which player
             if (transform.position.x < 0.0f)
             {
-                //left
-                collision.gameObject.GetComponentInChildren<Score>().IncrementScore(0);
+                //ball on left -> right scored
+                PlayerScores.IncrementScore(1);
             }
             else if (transform.position.x > 0.0f)
             {
-                //right
-                collision.gameObject.GetComponentInChildren<Score>().IncrementScore(0);
+                //ball on right -> left scored
+                PlayerScores.IncrementScore(0);
             }
+
+            velocity.x = velocity.y = 0.0f;
+            transform.position = velocity;
+            gameStart = false; 
         }
     }
 }
