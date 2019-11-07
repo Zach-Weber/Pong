@@ -47,7 +47,7 @@ public class PaddleMovement : MonoBehaviour
         }
         else if (position.y < -yBoundry)
         {
-            position.y = yBoundry;
+            position.y = -yBoundry;
         }
         transform.position = position;
     }
