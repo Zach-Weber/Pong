@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class PaddleMovement : MonoBehaviour
 {
-    public KeyCode upKey = KeyCode.UpArrow;
-    public KeyCode downKey = KeyCode.DownArrow;
+    public KeyCode upKey = KeyCode.W;
+    public KeyCode downKey = KeyCode.S;
     public float speed = 2.0f;
     public float yBoundry = 4.0f;
-    private Rigidbody2D RigidBody;
-
+    //private Rigidbody2D RigidBody;
+    private Vector3 velocity = new Vector3(0, 0, 0);
 
     // Start is called before the first frame update
     void Start()
     {
-        RigidBody = GetComponent<Rigidbody2D>();
+        //RigidBody = GetComponent<Rigidbody2D>();
     }
 
 
@@ -22,13 +22,13 @@ public class PaddleMovement : MonoBehaviour
     void Update()
     {
         // Adjust speed for when the up or down key
-        var velocity = RigidBody.velocity;
+        //var velocity = RigidBody.velocity;
 
-        if (Input.GetKeyDown(upKey))
+        if (Input.GetKey(upKey))
         {
             velocity.y = speed;
         }
-        else if (Input.GetKeyDown(downKey))
+        else if (Input.GetKey(downKey))
         {
             velocity.y = -speed;
         }
@@ -37,6 +37,7 @@ public class PaddleMovement : MonoBehaviour
             velocity.y = 0;
         }
 
+        transform.position += velocity;
 
         // Check for if the paddle is above or below set Y Boundry
         var position = transform.position;
@@ -48,6 +49,7 @@ public class PaddleMovement : MonoBehaviour
         {
             position.y = yBoundry;
         }
+        transform.position = position;
     }
 }
 
