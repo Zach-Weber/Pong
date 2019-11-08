@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Score : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class Score : MonoBehaviour
     {
         ScoreDisplay1.text = "" + playerScores[0];
         ScoreDisplay2.text = "" + playerScores[1];
+        CheckForWin();
     }
 
     public void IncrementScore(int player)
@@ -28,4 +30,17 @@ public class Score : MonoBehaviour
         playerScores[player]++;
     }
 
+    public void CheckForWin()
+    {
+        // if player 1 reaches 13 points switch to player 1 win screen
+        if (playerScores[0] == 13)
+        {
+            SceneManager.LoadScene("Player1Win");
+        }
+        // if player 2 reaches 13 points switch to player 2 win screen
+        else if (playerScores[1] == 13)
+        {
+            SceneManager.LoadScene("Player2Win");
+        }
+    }
 }
