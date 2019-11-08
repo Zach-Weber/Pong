@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
-    public float speed = 0.25f;
-    private float offset = Mathf.PI / 12; //offset of 15 degrees
+    public float speed = 0.15f;
+    public float acceleration = 1.1f;
+    private float offset = Mathf.PI / 6; //offset of 15 degrees
     private Vector3 velocity = new Vector3(0.0f, 0.0f, 0.0f);
     private float direction = 0.0f; //angle in radians
     private bool gameStart = false;
@@ -63,6 +64,11 @@ public class BallMovement : MonoBehaviour
         //paddle
         if (collision.gameObject.tag == "Paddle")
         {
+            velocity.x *= acceleration;
+            if(velocity.x > 0.3f)
+            {
+                velocity.x = 0.3f;
+            }
             velocity.x = -velocity.x;
         }
         //top & bottom walls
