@@ -180,7 +180,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -330,7 +330,7 @@ PrefabInstance:
     - target: {fileID: 2402631812775521086, guid: 5ec4b5c7d5f81ae49aa25575886aa195,
         type: 3}
       propertyPath: m_Name
-      value: Paddle
+      value: LeftPaddle
       objectReference: {fileID: 0}
     - target: {fileID: 2402631812775521082, guid: 5ec4b5c7d5f81ae49aa25575886aa195,
         type: 3}
@@ -392,7 +392,13 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8551719036893706404, guid: 5ec4b5c7d5f81ae49aa25575886aa195,
+        type: 3}
+      propertyPath: upKey
+      value: 119
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8551719036893706404, guid: 5ec4b5c7d5f81ae49aa25575886aa195, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5ec4b5c7d5f81ae49aa25575886aa195, type: 3}
 --- !u!1 &1012425063
 GameObject:
@@ -473,6 +479,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012425063}
   m_CullTransparentMesh: 0
+--- !u!1 &1509381816 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2402631812775521086, guid: 5ec4b5c7d5f81ae49aa25575886aa195,
+    type: 3}
+  m_PrefabInstance: {fileID: 890331520}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1509381817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509381816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8956c871b62a6f42851d27b1e674fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1676714736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -483,7 +507,7 @@ PrefabInstance:
     - target: {fileID: 2237645463670484396, guid: 11650bed0a0706845a0749f71e1ac39e,
         type: 3}
       propertyPath: m_Name
-      value: Wall (1)
+      value: BottomWall
       objectReference: {fileID: 0}
     - target: {fileID: 2237645463670484392, guid: 11650bed0a0706845a0749f71e1ac39e,
         type: 3}
@@ -552,7 +576,7 @@ PrefabInstance:
     - target: {fileID: 2402631812775521086, guid: 5ec4b5c7d5f81ae49aa25575886aa195,
         type: 3}
       propertyPath: m_Name
-      value: Paddle (1)
+      value: RightPaddle
       objectReference: {fileID: 0}
     - target: {fileID: 2402631812775521082, guid: 5ec4b5c7d5f81ae49aa25575886aa195,
         type: 3}
@@ -613,6 +637,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BodyType
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8551719036893706404, guid: 5ec4b5c7d5f81ae49aa25575886aa195,
+        type: 3}
+      propertyPath: upKey
+      value: 273
+      objectReference: {fileID: 0}
+    - target: {fileID: 8551719036893706404, guid: 5ec4b5c7d5f81ae49aa25575886aa195,
+        type: 3}
+      propertyPath: downKey
+      value: 274
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ec4b5c7d5f81ae49aa25575886aa195, type: 3}
@@ -861,7 +895,7 @@ PrefabInstance:
     - target: {fileID: 2237645463670484396, guid: 11650bed0a0706845a0749f71e1ac39e,
         type: 3}
       propertyPath: m_Name
-      value: Wall
+      value: TopWall
       objectReference: {fileID: 0}
     - target: {fileID: 2237645463670484392, guid: 11650bed0a0706845a0749f71e1ac39e,
         type: 3}

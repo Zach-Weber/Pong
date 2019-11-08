@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
-    private float speed = 0.1f;
+    private float speed = 0.15f;
     private float offset = Mathf.PI / 12; //offset of 15 degrees
     private Vector3 velocity = new Vector3(0.0f, 0.0f, 0.0f);
     private float direction = 0.0f; //angle in radians
@@ -31,11 +31,14 @@ public class BallMovement : MonoBehaviour
         }
     }
 
-    void MoveBall()
+    public Vector3 GetVelocity()
+    {
+        return velocity;
+    }
+
+    private void MoveBall()
     {
         transform.position += velocity;
-
-        
     }
 
     private void CalculateStartVelocity()
