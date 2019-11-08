@@ -243,12 +243,12 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -8.861263, y: 4.984151}
-  - {x: 8.917874, y: 4.969958}
+  - {x: -8.861263, y: 5.5989323}
+  - {x: 8.94582, y: 5.584739}
   - {x: 8.885286, y: 0.032688618}
-  - {x: 8.86456, y: -5.1142335}
-  - {x: -8.899298, y: -5.1028395}
-  - {x: -8.909333, y: 4.89099}
+  - {x: 8.86456, y: -5.597532}
+  - {x: -8.872448, y: -5.8277864}
+  - {x: -8.853445, y: 5.561094}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1043,6 +1043,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561066900958388338, guid: 9eaf380248cafe04ba976fd05faa59d7,
+        type: 3}
+      propertyPath: speed
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9eaf380248cafe04ba976fd05faa59d7, type: 3}
