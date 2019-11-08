@@ -9,6 +9,7 @@ public class OpponentAI : MonoBehaviour
 
     private Vector3 velocity;
     private float deltaY = 0.0f;
+    public float AISpeed = 1.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -34,10 +35,11 @@ public class OpponentAI : MonoBehaviour
             //find deltaY (vertical difference)
             deltaY = Ball.transform.position.y - transform.position.y;
             //move up by deltaY in increments
-            velocity.y = deltaY * Time.deltaTime;
+            velocity.y = deltaY * Time.deltaTime * AISpeed;
         }
         else
         {
+            //move back to start pos
             velocity.y = 0.0f;
         }
     }
@@ -48,13 +50,13 @@ public class OpponentAI : MonoBehaviour
 
         // check boundary
         var tempPosition = transform.position;
-        if (tempPosition.y > 4.0f)
+        if (tempPosition.y > 3.4f)
         {
-            tempPosition.y = 4.0f;
+            tempPosition.y = 3.4f;
         }
-        else if (tempPosition.y < -4.0f)
+        else if (tempPosition.y < -3.4f)
         {
-            tempPosition.y = -4.0f;
+            tempPosition.y = -3.4f;
         }
         transform.position = tempPosition;
     }
