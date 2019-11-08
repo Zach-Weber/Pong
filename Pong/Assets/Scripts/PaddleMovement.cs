@@ -6,8 +6,8 @@ public class PaddleMovement : MonoBehaviour
 {
     public KeyCode upKey = KeyCode.W;
     public KeyCode downKey = KeyCode.S;
-    public float speed = 2.0f;
-    public float yBoundry = 4.0f;
+    public float speed = 0.1f;
+    public float yBoundry = 3.4f;
     //private Rigidbody2D RigidBody;
     private Vector3 velocity = new Vector3(0, 0, 0);
 
