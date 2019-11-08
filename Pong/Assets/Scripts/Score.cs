@@ -33,12 +33,12 @@ public class Score : MonoBehaviour
     public void CheckForWin()
     {
         // if player 1 reaches 13 points switch to player 1 win screen
-        if (playerScores[0] == 13)
+        if (playerScores[0] == 5)
         {
             SceneManager.LoadScene("Player1Win");
         }
         // if player 2 reaches 13 points switch to player 2 win screen
-        else if (playerScores[1] == 13)
+        else if (playerScores[1] == 5)
         {
             SceneManager.LoadScene("Player2Win");
         }
