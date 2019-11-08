@@ -14,7 +14,7 @@ public class PaddleMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //RigidBody = GetComponent<Rigidbody2D>();
+
     }
 
 
@@ -22,7 +22,6 @@ public class PaddleMovement : MonoBehaviour
     void Update()
     {
         // Adjust speed for when the up or down key
-        //var velocity = RigidBody.velocity;
 
         if (Input.GetKey(upKey))
         {
