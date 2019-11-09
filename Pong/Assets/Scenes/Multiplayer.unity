@@ -318,8 +318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39531f03117c01a4184889ad210ddfac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreDisplay1: {fileID: 0}
-  ScoreDisplay2: {fileID: 0}
+  ScoreDisplay1: {fileID: 1870537185}
+  ScoreDisplay2: {fileID: 425685068}
 --- !u!1001 &890331520
 PrefabInstance:
   m_ObjectHideFlags: 0
