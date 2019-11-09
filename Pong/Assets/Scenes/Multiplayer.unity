@@ -702,6 +702,9 @@ MonoBehaviour:
   downKey: 115
   speed: 0.1
   yBoundry: 3.4
+  fire: 100
+  ObjectToFire: {fileID: 0}
+  fireDirection: 0
 --- !u!1001 &1676714736
 PrefabInstance:
   m_ObjectHideFlags: 0
