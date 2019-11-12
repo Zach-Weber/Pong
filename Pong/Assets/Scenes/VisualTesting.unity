@@ -2032,7 +2032,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 0}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key1: {r: 1, g: 1, b: 1, a: 0.59607846}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -5472,12 +5472,12 @@ PrefabInstance:
     - target: {fileID: 2237645463670484392, guid: 11650bed0a0706845a0749f71e1ac39e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 2237645463670484392, guid: 11650bed0a0706845a0749f71e1ac39e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -5.27
       objectReference: {fileID: 0}
     - target: {fileID: 2237645463670484392, guid: 11650bed0a0706845a0749f71e1ac39e,
         type: 3}
@@ -5923,12 +5923,12 @@ PrefabInstance:
     - target: {fileID: 2237645463670484392, guid: 11650bed0a0706845a0749f71e1ac39e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 2237645463670484392, guid: 11650bed0a0706845a0749f71e1ac39e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 5.26
       objectReference: {fileID: 0}
     - target: {fileID: 2237645463670484392, guid: 11650bed0a0706845a0749f71e1ac39e,
         type: 3}
