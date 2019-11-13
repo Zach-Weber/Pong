@@ -1,4 +1,4 @@
 # Pong
-Building Pong :)
+Base version is finished. Now to make it cooler. :)
 
-Trello Board: https://trello.com/invite/b/YOTSxYnA/68e0b27827aff88c4a1f90cca2ef73d8/team-16-pong
+Reference: https://www.youtube.com/watch?v=nxZqW14GS20

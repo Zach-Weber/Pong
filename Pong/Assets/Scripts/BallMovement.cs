@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
+    public float mass = 1.0f;
     public float speed = 0.15f;
-    public float acceleration = 1.1f;
+    public float acceleration = 1.05f;
     private float offset = Mathf.PI / 6; //offset of 15 degrees
-    private Vector3 velocity = new Vector3(0.0f, 0.0f, 0.0f);
+    public Vector3 velocity = new Vector3(0.0f, 0.0f, 0.0f);
     private float direction = 0.0f; //angle in radians
     private bool gameStart = false;
 
