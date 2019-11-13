@@ -3,3 +3,11 @@ Trello: https://trello.com/b/YOTSxYnA/team-16-pong
 Asset list: https://docs.google.com/spreadsheets/d/1qaRwb8tguY79tkXZ9_IFBt_ISeQSrMIn5AgLqHyqNUk/edit?usp=sharing
 
 GDD: https://docs.google.com/document/d/13a22kjeleXUJ_Q_xPpfMPniAMZC0oJhn4ImbuKeLaCQ/edit?usp=sharing
+
+
+Roles:
+Deepti - tech lead, co-director
+Sera - art lead, co-director
+Zach - producer
+Oscar - design lead
+Henry - sound lead
