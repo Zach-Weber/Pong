@@ -7,9 +7,11 @@ public class BallMovement : MonoBehaviour
     public float mass = 1.0f;
     public float speed = 0.15f;
     public float acceleration = 1.05f;
-    private float offset = Mathf.PI / 6; //offset of 15 degrees
     public Vector3 velocity = new Vector3(0.0f, 0.0f, 0.0f);
+
+    private float offset = Mathf.PI / 6; //offset of 15 degrees  
     private float direction = 0.0f; //angle in radians
+
     private bool gameStart = false;
 
     // Start is called before the first frame update
@@ -22,6 +24,17 @@ public class BallMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //cap speed
+        float velocity_magnitude = Mathf.Sqrt(velocity.x * velocity.x + velocity.y * velocity.y);
+        if (velocity_magnitude >= 0.2f)
+        {
+            velocity = velocity.normalized * 0.2f;
+        }
+        else if (velocity_magnitude <= 0.1f)
+        {
+            velocity = velocity.normalized * 0.1f;
+        }
+
         if (gameStart)
         {
             MoveBall();
@@ -31,11 +44,7 @@ public class BallMovement : MonoBehaviour
             CalculateStartVelocity();
             gameStart = true;
         }
-    }
-
-    public Vector3 GetVelocity()
-    {
-        return velocity;
+        Debug.Log("velocity: " + velocity_magnitude);
     }
 
     private void MoveBall()

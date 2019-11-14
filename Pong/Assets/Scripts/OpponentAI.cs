@@ -28,7 +28,7 @@ public class OpponentAI : MonoBehaviour
     private void PredictBallMovement()
     {
         //get ball direction
-        ballDirection = Ball.GetComponent<BallMovement>().GetVelocity();
+        ballDirection = Ball.GetComponent<BallMovement>().velocity;
         //check if its moving towards us
         if(ballDirection.x < 0.0f)
         {

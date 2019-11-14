@@ -8,9 +8,9 @@ public class BlackHole : MonoBehaviour
     public float gConst = 0.01f;
 
     private GameObject Ball;
-    private float force = 0.0f;
+    private float force;
     private Vector3 dir;
-    private float radius = 0.0f;
+    private float radius;
 
     private Vector3 speed = new Vector3(0.1f, 0.0f, 0.0f);
     private float targetPos = 0.0f;
@@ -59,7 +59,7 @@ public class BlackHole : MonoBehaviour
         dir = transform.position - Ball.transform.position;
         //use this to find radius (magnitude of vector)
         radius = Mathf.Sqrt(dir.x * dir.x + dir.y * dir.y);
-        //cant divide by 0
+        //make sure force doesn't get too big
         if(radius > 1.0f)
         {
             //Force = Gravitational constant * mass of object 1 * mass of object 2 / the distance between the two objects squared
