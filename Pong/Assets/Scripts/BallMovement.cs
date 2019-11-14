@@ -26,7 +26,7 @@ public class BallMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        gameObject.GetComponent<ParticleSystem>();
 
     }
 
@@ -89,14 +89,20 @@ public class BallMovement : MonoBehaviour
             velocity *= acceleration;
             velocity.x = -velocity.x;
 
-            //change color
+            //change color and emit particles
             if (transform.position.x < 0.0f)
             {
                 gameObject.GetComponent<SpriteRenderer>().color = player1Color;
+                gameObject.GetComponent<ParticleSystem>().shape.rotation.Set(0.0f, 90.0f, 0.0f);
+                gameObject.GetComponent<ParticleSystem>().Play();
+
+
             }
             else if (transform.position.x > 0.0f)
             {
                 gameObject.GetComponent<SpriteRenderer>().color = player2Color;
+                gameObject.GetComponent<ParticleSystem>().shape.rotation.Set(0.0f, -90.0f, 0.0f);
+                gameObject.GetComponent<ParticleSystem>().Play();
             }
 
         }
