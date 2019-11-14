@@ -5,7 +5,7 @@ using UnityEngine;
 public class BlackHole : MonoBehaviour
 {
     public float mass = 1.0f;
-    public float gConst = 0.01f;
+    public float gConst = 0.05f;
 
     private GameObject Ball;
     private float force;

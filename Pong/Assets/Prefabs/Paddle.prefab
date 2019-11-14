@@ -143,9 +143,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upKey: 119
   downKey: 115
+  speed: 0.1
+  yBoundry: 3.3
   fire: 100
   ObjectToFire: {fileID: 1926135376600269374, guid: f543e708635603f47bee751fe9c12ac8,
     type: 3}
   fireDirection: 0
-  speed: 0.1
-  yBoundry: 3.3

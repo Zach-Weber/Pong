@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
+    //color
+    public Color player1Color = Color.blue;
+    public Color player2Color = Color.red;
+
+    //speed
     public float mass = 1.0f;
     public float speed = 0.15f;
     public float acceleration = 1.05f;
     public Vector3 velocity = new Vector3(0.0f, 0.0f, 0.0f);
 
+    //direction
     private float offset = Mathf.PI / 6; //offset of 15 degrees  
     private float direction = 0.0f; //angle in radians
 
+    //checks if game is started
     private bool gameStart = false;
 
     // Start is called before the first frame update
@@ -35,6 +42,7 @@ public class BallMovement : MonoBehaviour
             velocity = velocity.normalized * 0.1f;
         }
 
+        //press space to start
         if (gameStart)
         {
             MoveBall();
@@ -44,7 +52,6 @@ public class BallMovement : MonoBehaviour
             CalculateStartVelocity();
             gameStart = true;
         }
-        Debug.Log("velocity: " + velocity_magnitude);
     }
 
     private void MoveBall()
@@ -71,26 +78,34 @@ public class BallMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //paddle
+        //collide with paddle
         if (collision.gameObject.tag == "Paddle")
         {
-            velocity.x *= acceleration;
-            if(velocity.x > 0.3f)
-            {
-                velocity.x = 0.3f;
-            }
+            velocity *= acceleration;
             velocity.x = -velocity.x;
+
+            //change color
+            if (transform.position.x < 0.0f)
+            {
+                gameObject.GetComponent<SpriteRenderer>().color = player1Color;
+            }
+            else if (transform.position.x > 0.0f)
+            {
+                gameObject.GetComponent<SpriteRenderer>().color = player2Color;
+            }
+
         }
-        //top & bottom walls
+        //collide with top or bottom wall
         else if (collision.gameObject.tag == "Wall")
         {
             velocity.y = -velocity.y;
         }
-        //score
+        //collide with left/right edge to score
         else if (collision.gameObject.tag == "MainCamera")
         {
             Score PlayerScores = collision.gameObject.GetComponent<Score>();
-            //which player
+
+            //check which player scored
             if (transform.position.x < 0.0f)
             {
                 //ball on left -> right scored
