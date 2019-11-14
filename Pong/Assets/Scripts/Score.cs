@@ -22,7 +22,7 @@ public class Score : MonoBehaviour
         // Sets playonawake to false so the game doesnt accidentally play the sound
         GetComponent<AudioSource>().playOnAwake = false;
         // Sets the audio clip on the Audio Source component to the clip that was added to this script
-        GetComponent<AudioSource>().clip = sound;
+        GetComponent<AudioSource>().clip = ScoreSound;
     }
 
     // Update is called once per frame
