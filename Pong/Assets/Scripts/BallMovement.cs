@@ -31,6 +31,20 @@ public class BallMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //press space to start
+        if (gameStart)
+        {
+            MoveBall();
+            if(Input.GetKeyDown(KeyCode.R))
+            {
+                ResetBall();
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            CalculateStartVelocity();
+            gameStart = true;
+        }
         //cap speed
         float velocity_magnitude = Mathf.Sqrt(velocity.x * velocity.x + velocity.y * velocity.y);
         if (velocity_magnitude >= 0.2f)
@@ -40,17 +54,6 @@ public class BallMovement : MonoBehaviour
         else if (velocity_magnitude <= 0.1f)
         {
             velocity = velocity.normalized * 0.1f;
-        }
-
-        //press space to start
-        if (gameStart)
-        {
-            MoveBall();
-        }
-        else if (Input.GetKeyDown(KeyCode.Space))
-        {
-            CalculateStartVelocity();
-            gameStart = true;
         }
     }
 
@@ -116,10 +119,14 @@ public class BallMovement : MonoBehaviour
                 //ball on right -> left scored
                 PlayerScores.IncrementScore(0);
             }
-
-            velocity.x = velocity.y = 0.0f;
-            transform.position = velocity;
-            gameStart = false; 
+            ResetBall();
         }
+    }
+
+    private void ResetBall()
+    {
+        velocity.x = velocity.y = 0.0f;
+        transform.position = velocity;
+        gameStart = false;
     }
 }
