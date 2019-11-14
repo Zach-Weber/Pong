@@ -13,6 +13,8 @@ public class BallMovement : MonoBehaviour
     public float speed = 0.15f;
     public float acceleration = 1.05f;
     public Vector3 velocity = new Vector3(0.0f, 0.0f, 0.0f);
+    public float minSpeed = 0.1f;
+    public float maxSpeed = 0.25f;
 
     //direction
     private float offset = Mathf.PI / 6; //offset of 15 degrees  
@@ -31,26 +33,29 @@ public class BallMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //cap speed
-        float velocity_magnitude = Mathf.Sqrt(velocity.x * velocity.x + velocity.y * velocity.y);
-        if (velocity_magnitude >= 0.2f)
-        {
-            velocity = velocity.normalized * 0.2f;
-        }
-        else if (velocity_magnitude <= 0.1f)
-        {
-            velocity = velocity.normalized * 0.1f;
-        }
-
         //press space to start
         if (gameStart)
         {
             MoveBall();
+            if(Input.GetKeyDown(KeyCode.R))
+            {
+                ResetBall();
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Space))
         {
             CalculateStartVelocity();
             gameStart = true;
+        }
+        //cap speed
+        float velocity_magnitude = Mathf.Sqrt(velocity.x * velocity.x + velocity.y * velocity.y);
+        if (velocity_magnitude >= maxSpeed)
+        {
+            velocity = velocity.normalized * maxSpeed;
+        }
+        else if (velocity_magnitude <= minSpeed)
+        {
+            velocity = velocity.normalized * minSpeed;
         }
     }
 
@@ -116,10 +121,14 @@ public class BallMovement : MonoBehaviour
                 //ball on right -> left scored
                 PlayerScores.IncrementScore(0);
             }
-
-            velocity.x = velocity.y = 0.0f;
-            transform.position = velocity;
-            gameStart = false; 
+            ResetBall();
         }
+    }
+
+    private void ResetBall()
+    {
+        velocity.x = velocity.y = 0.0f;
+        transform.position = velocity;
+        gameStart = false;
     }
 }
