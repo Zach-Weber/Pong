@@ -85,6 +85,7 @@ public class BallMovement : MonoBehaviour
     {
         //make sure ball doesn't get tilted
         var tempRotation = transform.rotation;
+        tempRotation.y = 0.0f;
 
         //collide with paddle
         if (collision.gameObject.tag == "Paddle")
@@ -112,7 +113,6 @@ public class BallMovement : MonoBehaviour
         //collide with top or bottom wall
         else if (collision.gameObject.tag == "Wall")
         {
-            tempRotation.y = 0.0f;
             velocity.y = -velocity.y;
         }
 
