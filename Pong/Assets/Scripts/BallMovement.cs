@@ -112,6 +112,7 @@ public class BallMovement : MonoBehaviour
         //collide with top or bottom wall
         else if (collision.gameObject.tag == "Wall")
         {
+            tempRotation.y = 0.0f;
             velocity.y = -velocity.y;
         }
 
@@ -135,13 +136,23 @@ public class BallMovement : MonoBehaviour
         }
 
         //reset rotation -> doesn't tilt
-        //transform.rotation.Set(0.0f, tempRotation.y, 0.0f, 0.0f);
+        tempRotation.x = tempRotation.z = tempRotation.w = 0.0f;
+        transform.rotation = tempRotation;
     }
 
     private void ResetBall()
     {
+        //reset rotation
+        var tempRotation = transform.rotation;
+        tempRotation.x = tempRotation.y = tempRotation.z = tempRotation.w = 0.0f;
+        transform.rotation = tempRotation;
+
+        //reset position
         velocity.x = velocity.y = 0.0f;
         transform.position = velocity;
+
+        //reset game status and color
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
         gameStart = false;
     }
 }
