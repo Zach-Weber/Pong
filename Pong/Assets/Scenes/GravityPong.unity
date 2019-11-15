@@ -175,7 +175,7 @@ SpriteRenderer:
   m_SortingLayer: -4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f337270b3aa8ca04499e8247b618efab, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.35686275}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -664,7 +664,7 @@ PrefabInstance:
     - target: {fileID: 2402631812775521082, guid: 5ec4b5c7d5f81ae49aa25575886aa195,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.25
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 2402631812775521083, guid: 5ec4b5c7d5f81ae49aa25575886aa195,
         type: 3}
@@ -674,12 +674,12 @@ PrefabInstance:
     - target: {fileID: 2402631812775521083, guid: 5ec4b5c7d5f81ae49aa25575886aa195,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.78431374
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2402631812775521083, guid: 5ec4b5c7d5f81ae49aa25575886aa195,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.74509805
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2402631812775521083, guid: 5ec4b5c7d5f81ae49aa25575886aa195,
         type: 3}
@@ -5784,6 +5784,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2237645463670484395, guid: 11650bed0a0706845a0749f71e1ac39e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: aa1be2f94aa0ab14b9c80c551a56693a,
+        type: 3}
+    - target: {fileID: 2237645463670484394, guid: 11650bed0a0706845a0749f71e1ac39e,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 19.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237645463670484394, guid: 11650bed0a0706845a0749f71e1ac39e,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.57
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11650bed0a0706845a0749f71e1ac39e, type: 3}
 --- !u!1001 &1740840982
@@ -5856,23 +5872,23 @@ PrefabInstance:
     - target: {fileID: 2402631812775521083, guid: 5ec4b5c7d5f81ae49aa25575886aa195,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.8509804
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2402631812775521083, guid: 5ec4b5c7d5f81ae49aa25575886aa195,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.6117647
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2402631812775521083, guid: 5ec4b5c7d5f81ae49aa25575886aa195,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.6117647
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2402631812775521083, guid: 5ec4b5c7d5f81ae49aa25575886aa195,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 51b06627dc08a9c4195b21ae0bb0563f,
+      objectReference: {fileID: 21300000, guid: cdffcafc7cba1e24cbd18e727dadfedc,
         type: 3}
     - target: {fileID: 7592168994257700742, guid: 5ec4b5c7d5f81ae49aa25575886aa195,
         type: 3}
@@ -6186,6 +6202,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237645463670484395, guid: 11650bed0a0706845a0749f71e1ac39e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: aa1be2f94aa0ab14b9c80c551a56693a,
+        type: 3}
+    - target: {fileID: 2237645463670484394, guid: 11650bed0a0706845a0749f71e1ac39e,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 19.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237645463670484394, guid: 11650bed0a0706845a0749f71e1ac39e,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.57
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11650bed0a0706845a0749f71e1ac39e, type: 3}
