@@ -83,6 +83,9 @@ public class BallMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //make sure ball doesn't get tilted
+        var tempRotation = transform.rotation;
+
         //collide with paddle
         if (collision.gameObject.tag == "Paddle")
         {
@@ -93,24 +96,25 @@ public class BallMovement : MonoBehaviour
             if (transform.position.x < 0.0f)
             {
                 gameObject.GetComponent<SpriteRenderer>().color = player1Color;
-                gameObject.GetComponent<ParticleSystem>().shape.rotation.Set(0.0f, 90.0f, 0.0f);
-                gameObject.GetComponent<ParticleSystem>().Play();
-
-
+                tempRotation.y = 180.0f;
             }
             else if (transform.position.x > 0.0f)
             {
                 gameObject.GetComponent<SpriteRenderer>().color = player2Color;
-                gameObject.GetComponent<ParticleSystem>().shape.rotation.Set(0.0f, -90.0f, 0.0f);
-                gameObject.GetComponent<ParticleSystem>().Play();
+                tempRotation.y = 0.0f;
             }
 
+            //apply particle effect
+            transform.rotation = tempRotation;
+            gameObject.GetComponent<ParticleSystem>().Play();
         }
+
         //collide with top or bottom wall
         else if (collision.gameObject.tag == "Wall")
         {
             velocity.y = -velocity.y;
         }
+
         //collide with left/right edge to score
         else if (collision.gameObject.tag == "MainCamera")
         {
@@ -129,6 +133,9 @@ public class BallMovement : MonoBehaviour
             }
             ResetBall();
         }
+
+        //reset rotation -> doesn't tilt
+        //transform.rotation.Set(0.0f, tempRotation.y, 0.0f, 0.0f);
     }
 
     private void ResetBall()
