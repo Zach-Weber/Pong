@@ -172,7 +172,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2074508721
-  m_SortingLayer: -1
+  m_SortingLayer: -5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f337270b3aa8ca04499e8247b618efab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -209,10 +209,10 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420029}
   - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
@@ -566,6 +566,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1561066900958388336, guid: 9eaf380248cafe04ba976fd05faa59d7,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -540130853
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561066900958388336, guid: 9eaf380248cafe04ba976fd05faa59d7,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: -2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9eaf380248cafe04ba976fd05faa59d7, type: 3}
 --- !u!1001 &890331520
@@ -624,11 +634,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8551719036893706404, guid: 5ec4b5c7d5f81ae49aa25575886aa195,
-        type: 3}
-      propertyPath: upKey
-      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 2402631812775521083, guid: 5ec4b5c7d5f81ae49aa25575886aa195,
         type: 3}
@@ -696,8 +701,7 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2.8
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8551719036893706404, guid: 5ec4b5c7d5f81ae49aa25575886aa195, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ec4b5c7d5f81ae49aa25575886aa195, type: 3}
 --- !u!1 &1078055965
 GameObject:
@@ -877,32 +881,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262141334}
   m_CullTransparentMesh: 0
---- !u!1 &1509381816 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2402631812775521086, guid: 5ec4b5c7d5f81ae49aa25575886aa195,
-    type: 3}
-  m_PrefabInstance: {fileID: 890331520}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1509381817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1509381816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 481b4332000e0b54dae3270b9155f17e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  upKey: 119
-  downKey: 115
-  speed: 0.1
-  yBoundry: 3.4
-  fire: 100
-  ObjectToFire: {fileID: 1926135376600269374, guid: f543e708635603f47bee751fe9c12ac8,
-    type: 3}
-  fireDirection: 1
 --- !u!1 &1595227218
 GameObject:
   m_ObjectHideFlags: 0

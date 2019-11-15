@@ -44,6 +44,15 @@ TagManager:
   - name: Background
     uniqueID: 2074508721
     locked: 0
+  - name: Paddles
+    uniqueID: 711134889
+    locked: 0
+  - name: BlackHole
+    uniqueID: 1517055919
+    locked: 0
+  - name: Ball
+    uniqueID: 3754836443
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
