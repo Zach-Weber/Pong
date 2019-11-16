@@ -21,10 +21,20 @@ public class BlackHole : MonoBehaviour
     public float maxTime = 5.0f;
     private float timeRemaining = 0.0f;
 
+    // Add the launch sound clip to this script
+    public AudioClip LaunchSound;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Sets playonawake to false so the game doesnt accidentally play the sound
+        GetComponent<AudioSource>().playOnAwake = false;
+        // Sets the audio clip on the Audio Source component to the clip that was added to this script
+        GetComponent<AudioSource>().clip = LaunchSound;
+
+        //plays the sound when the blackhole is spawned
+        Debug.Log("Sound Played");
+        GetComponent<AudioSource>().Play();
     }
 
     void Awake()
