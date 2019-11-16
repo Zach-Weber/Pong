@@ -18,7 +18,7 @@ public class BlackHole : MonoBehaviour
     private float targetPos = 0.0f;
 
     //time until despawn
-    private const float maxTime = 5.0f;
+    public float maxTime = 5.0f;
     private float timeRemaining = 0.0f;
 
     // Start is called before the first frame update

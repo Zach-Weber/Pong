@@ -16,10 +16,14 @@ public class PaddleMovement : MonoBehaviour
     public GameObject ObjectToFire = null;
     public float fireDirection = 0.0f;
 
+    //timers for black hole cooldown
+    public float cooldownTime = 10.0f;
+    private float timeRemaining = 0.0f;
 
     // Start is called before the first frame update
     void Start()
     {
+
 
     }
 
@@ -28,7 +32,15 @@ public class PaddleMovement : MonoBehaviour
     void Update()
     {
         MovePaddles();
-        FireBlackHole();
+
+        //cooldown for blackholes
+        timeRemaining -= Time.deltaTime;
+        if(Input.GetKeyDown(fire) && timeRemaining <= 0.0f)
+        {
+            FireBlackHole();
+            timeRemaining = cooldownTime;
+        }
+
     }
 
     //move paddles up and down
@@ -66,13 +78,9 @@ public class PaddleMovement : MonoBehaviour
     //fire a black hole
     private void FireBlackHole()
     {
-        //need to limit the amount
-        if (Input.GetKeyDown(fire))
-        {
-            var position = transform.position;
-            position.x += fireDirection * 3.0f;
-            Instantiate(ObjectToFire, position, transform.rotation);
-        }
+        var position = transform.position;
+        position.x += fireDirection;
+        Instantiate(ObjectToFire, position, transform.rotation);
     }
 }
 
