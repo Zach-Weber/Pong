@@ -582,30 +582,60 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 2d12b0649cfbe8b42b91def55b87d348,
         type: 3}
+    - target: {fileID: 1561066900958388336, guid: 9eaf380248cafe04ba976fd05faa59d7,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1561066900958388338, guid: 9eaf380248cafe04ba976fd05faa59d7,
         type: 3}
       propertyPath: player1Color.g
-      value: 0.78431374
+      value: 0.7971698
       objectReference: {fileID: 0}
     - target: {fileID: 1561066900958388338, guid: 9eaf380248cafe04ba976fd05faa59d7,
         type: 3}
       propertyPath: player1Color.b
-      value: 0.74509805
+      value: 0.7971698
       objectReference: {fileID: 0}
     - target: {fileID: 1561066900958388338, guid: 9eaf380248cafe04ba976fd05faa59d7,
         type: 3}
       propertyPath: player2Color.r
-      value: 0.8509804
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1561066900958388338, guid: 9eaf380248cafe04ba976fd05faa59d7,
         type: 3}
       propertyPath: player2Color.g
-      value: 0.6117647
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1561066900958388338, guid: 9eaf380248cafe04ba976fd05faa59d7,
         type: 3}
       propertyPath: player2Color.b
-      value: 0.6117647
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561066900958388338, guid: 9eaf380248cafe04ba976fd05faa59d7,
+        type: 3}
+      propertyPath: player1Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561066900958388338, guid: 9eaf380248cafe04ba976fd05faa59d7,
+        type: 3}
+      propertyPath: startColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561066900958388338, guid: 9eaf380248cafe04ba976fd05faa59d7,
+        type: 3}
+      propertyPath: startColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561066900958388338, guid: 9eaf380248cafe04ba976fd05faa59d7,
+        type: 3}
+      propertyPath: startColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561066900958388338, guid: 9eaf380248cafe04ba976fd05faa59d7,
+        type: 3}
+      propertyPath: startColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8958264816361209996, guid: 9eaf380248cafe04ba976fd05faa59d7,
         type: 3}

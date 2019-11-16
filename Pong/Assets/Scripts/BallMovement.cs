@@ -5,8 +5,9 @@ using UnityEngine;
 public class BallMovement : MonoBehaviour
 {
     //color
-    public Color player1Color = Color.blue;
-    public Color player2Color = Color.red;
+    public Color player1Color = new Color(255.0f, 203.0f, 203.0f);
+    public Color player2Color = Color.white;
+    public Color startColor = Color.black;
 
     //speed
     public float mass = 1.0f;
@@ -26,7 +27,8 @@ public class BallMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.GetComponent<ParticleSystem>();
+        //off-purple
+        gameObject.GetComponent<SpriteRenderer>().color = startColor;
 
     }
 
@@ -79,6 +81,16 @@ public class BallMovement : MonoBehaviour
         //use direction to calculate velocity (speed * direction)
         velocity.x = speed * Mathf.Cos(direction);
         velocity.y = speed * Mathf.Sin(direction);
+
+        //set initial movement color
+        if(velocity.x < 0.0f)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = player2Color;
+        }
+        else if (velocity.x > 0.0f)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = player1Color;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -152,7 +164,7 @@ public class BallMovement : MonoBehaviour
         transform.position = velocity;
 
         //reset game status and color
-        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        gameObject.GetComponent<SpriteRenderer>().color = startColor;
         gameStart = false;
     }
 }
